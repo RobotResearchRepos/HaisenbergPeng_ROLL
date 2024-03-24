@@ -18,6 +18,10 @@ RUN git clone --recurse-submodules \
       https://github.com/HaisenbergPeng/FAST_LIO \
       /catkin_ws/src/FAST_LIO
 
+RUN git clone --recurse-submodules \
+      https://github.com/Livox-SDK/livox_ros_driver \
+      /catkin_ws/src/livox_ros_driver
+
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
  && apt-get update \
  && rosdep install -r -y \
