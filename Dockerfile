@@ -6,6 +6,12 @@ RUN apt-get update \
  && apt-get install -y git \
  && rm -rf /var/lib/apt/lists/*
 
+# Source code dependencies
+
+RUN git clone https://github.com/borglab/gtsam \
+ && mkdir build && cd build \
+ && cmake .. && make install && cd .. && rm -fr gtsam
+
 # Code repository
 
 RUN mkdir -p /catkin_ws/src/
